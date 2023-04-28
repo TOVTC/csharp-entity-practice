@@ -1,6 +1,6 @@
 # Quick Start
 *   New ASP.NET Core Web API project
-*   Create a new .NET 5.0 application and copy over the Program.cs and Startup.cs files
+*   Create a new .NET 5.0 application and copy over the Program.cs and Startup.cs files, updating the namespace
 *   Add database Connection String to appsettings.Develop.json, updating connection string with database name
 ```    
 "ConnectionStrings": {
@@ -38,5 +38,5 @@ dotnet ef migrations add DatabaseContextNameMigrations --project ProjectName
 ```
 dotnet ef database update --project ProjectName
 ```
-*   If these commands don't work, check the notes from the original C# entity practice database to make sure everything is properly isntalled or you might need to manually create a database in Microsoft SQL server first
+*   If these commands don't work, check the notes from the original C# entity practice database to make sure everything is properly installed or you might need to manually create a database in Microsoft SQL server first
 *   Then, you should be able to run your queries in Insomnia or Swagger
