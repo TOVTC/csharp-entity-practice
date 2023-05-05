@@ -23,14 +23,14 @@ builder.Services.AddDbContext<DatabaseContextName>(options =>
 ```
 ##
 *   Create table models
-*   Create database context using pre-set code (sets the name of the table for table model)
+*   Create database context using pre-set code (sets the name of the table for table model), updating database context name, table model names, and table names
 ```
 using Microsoft.EntityFrameworkCore;
 namespace PracticeReleaseReportService
 {
-    public class ReportsDbContext : DbContext
+    public class DbContextName : DbContext
     {
-        public ReportsDbContext(DbContextOptions options) : base(options)
+        public DbContextName(DbContextOptions options) : base(options)
         {
         }
         public virtual DbSet<TableModelName> DatabaseTableName { get; set; }
