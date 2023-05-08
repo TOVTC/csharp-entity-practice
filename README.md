@@ -50,3 +50,11 @@ dotnet ef database update --project ProjectName
 ```
 *   If these commands don't work, check the notes from the original C# entity practice database to make sure everything is properly installed
 *   Run your queries in Insomnia or Swagger
+*   To undo a migration, use the following command to revert changes to the database, updating for the project name and name of the migration at the state you want to revert to, excluding the migration name's date
+```
+dotnet ef database update NameOfTargetMigration --project ProjectName
+```
+*   To remove the last migration, use the following command, updating project name
+```
+dotnet ef migrations remove --project ProjectName
+```
