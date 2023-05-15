@@ -58,3 +58,22 @@ dotnet ef database update NameOfTargetMigration --project ProjectName
 ```
 dotnet ef migrations remove --project ProjectName
 ```
+*   Configure CORS with the following lines in Program.cs (.NET 6.0)
+   *   Declared under var builder, updating for policy name (and variable name if desired, so long as it's consistent across references)
+```
+var origins = "NameOfPolicy";
+```
+   *   Declared under builder.Services.AddControllers()
+```
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: origins, policy =>
+    {
+        policy.AllowAnyOrigin();
+    });
+});
+```
+   *   Declared under app.Use(), before App.Run()
+```
+app.UseCors(origins);
+```
