@@ -77,3 +77,11 @@ builder.Services.AddCors(options =>
 ```
 app.UseCors(origins);
 ```
+*   Disable related data serialization loop using the following in Program.cs (.NET 6.0), declared under builder.Services.AddControllers();
+```
+      builder.Services.AddControllers()
+          .AddJsonOptions(options =>
+          {
+              options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+          });
+```
